@@ -1,0 +1,24 @@
+
+include layout.pug
+div(class="container" style="background: rgb(174, 203, 214);")
+        div(class="jumbotron" style="height:100vh")
+            h1(style="color:blue")="INGRESE PRODUCTO"
+            br
+            form(action="./productos" method="post")
+                div(class="form-group")
+                    i
+                        label="Nombre"
+                    input(id="title" type="text" class="form-control" name="title")
+                div(class="form-group")
+                    i
+                        label="Precio"
+                    input(id="price" type="number" class="form-control" name="price")
+                div(class="form-group")
+                    i
+                        label="Imagen"
+                    input(id="image" type="text" class="form-control" name="image")
+                button(class="btn btn-success mt-3 mb-5")="Enviar"
+            a(href="./productos")
+                button(type="button" class="btn btn-secondary")="Ver Productos"
+
+

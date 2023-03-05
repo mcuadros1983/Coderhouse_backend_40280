@@ -1,0 +1,22 @@
+node server.js -p 8080 -m FORK
+node server.js -p 8080 -m LUSTER
+
+npm run dev server.js -p 8080 -m FORK
+npm run dev server.js -p 8080 -m CLUSTER
+
+nodemon server.js -p 8080 -m FORK
+nodemon server.js -p 8080 -m CLUSTER
+
+forever start server.js 8080
+forever list
+forever stopall
+
+pm2 start server.js --name="server1" --watch -- 8080
+pm2 list
+pm2 delete server1 
+
+pm2 start server.js --name="server2" --watch -i max -- 
+8081
+pm2 list
+pm2 delete server2 
+

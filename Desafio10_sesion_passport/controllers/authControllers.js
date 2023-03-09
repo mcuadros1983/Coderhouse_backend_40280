@@ -21,7 +21,7 @@ const failregister = (req, res) => {
 const loginForm = (req, res) => {
   const user = req.user;
   if (user) {
-    res.render("index", { user });
+    res.redirect("/");
   } else {
     res.render("auth/login");
   }

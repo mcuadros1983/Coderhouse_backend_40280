@@ -1,8 +1,9 @@
-const chatPersistence = require('../persistence/chatPersistence')
-const logger = require('../logger')
+const messagePersistence = require('../persistence/messagePersistence')
+const logger = require("../logger.js")
+const loggerConsola = logger.getLogger("default");
 
 async function getTestMessages() {
-  return chatPersistence.getAllMessagesNormalized()
+  return messagePersistence.getAllMessagesNormalized()
 }
 
 async function addMessage({ email, name, lastName, age, nick, avatar, text }) {
@@ -10,11 +11,11 @@ async function addMessage({ email, name, lastName, age, nick, avatar, text }) {
     const isError = validateMessage({email, text})
     if(isError) throw new Error(isError)
 
-    const res = chatPersistence.addMessageWithAuthor({ email, name, lastName, age, nick, avatar, text })
-    logger.info(`Registro de mensaje de ${email} exitosa`)
+    const res = messagePersistence.addMessageWithAuthor({ email, name, lastName, age, nick, avatar, text })
+    loggerConsola.info(`Registro de mensaje de ${email} exitosa`)
     return res
   } catch (error) {
-    logger.error('Error en addMessage: ' + error.message)
+    loggerConsola.error('Error en addMessage: ' + error.message)
     return error
   }
 }

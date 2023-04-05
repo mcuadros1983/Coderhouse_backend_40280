@@ -1,4 +1,5 @@
-const logger = require('../logger.js')
+const logger = require("../logger.js")
+const loggerConsola = logger.getLogger("default");
 const productPersistence = require('../persistence/productPersistence.js')
 
 
@@ -8,10 +9,10 @@ async function addProduct({title, price, thumbnail}) {
     if(isError) throw new Error(isError)
     
     const res = productPersistence.addProduct({ title, price, thumbnail })
-    logger.info(`Registro de producto exitosa`)
+    loggerConsola.info(`Registro de producto exitosa`)
     return res;
   } catch (error) {
-    logger.error('Error en postProduct: ' + error.message)
+    loggerConsola.error('Error en postProduct: ' + error.message)
     return error
   }
 }

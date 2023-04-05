@@ -1,7 +1,7 @@
 import ContenedorArchivo from "../../contenedores/ContenedorArchivo.js";
 import fs from "fs";
 
-class ProductosDaoArchivo extends ContenedorArchivo {
+class ProductosDaoArchivo extends ContenedorArchivo { 
     constructor() {
         super("productos");
     }

@@ -1,9 +1,9 @@
-import { config } from "dotenv";
-config();
+// import { config } from "dotenv";
+// config();
 
-// Archivo
-//import { ProductosDaoArchivo } from "./productos/ProductosDaoArchivo.js";
-//import { CarritosDaoArchivo } from "./carritos/CarritosDaoArchivo.js";
+//Archivo
+import { ProductosDaoArchivo } from "./productos/ProductosDaoArchivo.js";
+import { CarritosDaoArchivo } from "./carritos/CarritosDaoArchivo.js";
 
 // Memoria
 //import { ProductosDaoMemoria } from "./productos/ProductosDaoMemoria.js";
@@ -15,7 +15,7 @@ config();
 //import { CarritosDaoFirebase } from "./carritos/CarritosDaoFirebase.js";
 
 // MongoDb
-import { connectMongo } from "../db/mongoConnect.js";
+import { connectMongo } from "../db2/mongoConnect.js";
 // import { ProductosDaoMongoDb } from "./productos/ProductosDaoMongoDb.js";
 // import { CarritosDaoMongoDb } from "./carritos/CarritosDaoMongoDb.js";
 

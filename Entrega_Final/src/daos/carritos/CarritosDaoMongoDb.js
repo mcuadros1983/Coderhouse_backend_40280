@@ -1,5 +1,5 @@
 
-import { carritoSchema } from "../../models/carritos.js";
+import { carritoSchema } from "../../models/carrito.js";
 import ContenedorMongoDb from "../../contenedores/ContenedorMongoDb.js"
 import { ProductosDaoMongoDb } from "../productos/ProductosDaoMongoDb.js";
 

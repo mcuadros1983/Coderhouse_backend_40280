@@ -2,11 +2,21 @@ import { Router } from "express";
 import {getProducts, getProductsById, addProduct, updateProduct, deleteProduct} from "../controllers/productosControllers.js"
 const productRouter = Router();
 
+// GET /api/productos/:id?
+productRouter.get("/:id?", getProducts)
+
+
+
+
+
+
+
+
 // GET /api/productos/
 productRouter.get("/", getProducts)
 
 // GET /api/productos/:id
-productRouter.get("/:id", getProductsById)
+// productRouter.get("/:id", getProductsById)
 
 // POST /api/productos/
 productRouter.post("/", addProduct)

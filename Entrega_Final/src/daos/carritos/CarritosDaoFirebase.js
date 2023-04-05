@@ -1,6 +1,5 @@
 import ContenedorFirebase from "../../contenedores/ContenedorFirebase.js";
 import { ProductosDaoFirebase } from "../productos/ProductosDaoFirebase.js";
-//import { productosDao } from "../index.js"
 
 class CarritosDaoFirebase extends ContenedorFirebase {
     constructor() {
@@ -12,19 +11,19 @@ class CarritosDaoFirebase extends ContenedorFirebase {
         try {
             let existProd = await this.product.getById(id_prod).then(e => e.payload);
             if (!existProd) {
-                return { status: 'Error', message: `El producto de ID ${id_prod} no existe` };
+                return
             }
 
             let ref = this.collection.doc(id);
             let data = await ref.get().then(doc => doc.exists ? doc.data() : null);
             if (!data) {
-                return { status: 'Error', message: `El carrito de ID ${id} no existe` };
+                return
             }
 
             let product = { id: id_prod, ...existProd }
 
             await this.collection.doc(id).update({
-                //productos: this.FieldValue.arrayUnion(id_prod)
+
                 productos: this.FieldValue.arrayUnion(product)
             });
 
